@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: uniwallet
+
+server:
+  port: 8080
+
+uniwallet:
+  base-url: ${UNIWALLET_BASE_URL}
+  api-key: ${UNIWALLET_API_KEY}
+  country: ${UNIWALLET_COUNTRY}
+  transflow-id: ${UNIWALLET_TRANSFLOW_ID}
+  product-id: ${UNIWALLET_PRODUCT_ID}
