@@ -40,7 +40,9 @@ public class GlobalExceptionHandler {
                 "responseCode",
                 "500",
                 "responseMessage",
-                "An unexpected error occurred"
+                (e.getMessage() != null)
+                    ? e.getMessage()
+                    : "An unexpected error occurred"
             )
         );
     }

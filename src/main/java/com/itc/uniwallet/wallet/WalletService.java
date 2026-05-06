@@ -127,13 +127,18 @@ public class WalletService {
         body.put("transflowId", config.getTransflowId());
         body.put("productId", config.getProductId());
 
-        HttpEntity<Map<String, String>> entity = new HttpEntity<>(body, headers);
+        HttpEntity<Map<String, String>> entity = new HttpEntity<>(
+            body,
+            headers
+        );
 
         ResponseEntity<TransactionResponse> response = restTemplate.exchange(
-                config.getBaseUrl() + "/uniwallet/v2/transaction-status/" + refNo,
-                HttpMethod.GET,
-                entity,
-                TransactionResponse.class
+            config.getBaseUrl() +
+                "/uniwallet/v2/check-transaction-status/" +
+                refNo,
+            HttpMethod.POST,
+            entity,
+            TransactionResponse.class
         );
 
         return response.getBody();
